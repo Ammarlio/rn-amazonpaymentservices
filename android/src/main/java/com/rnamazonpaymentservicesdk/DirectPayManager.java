@@ -56,7 +56,7 @@ public class DirectPayManager extends ViewGroupManager<FrameLayout> {
     /**
      * Handle "create" command (called from JS) and call createFragment method
      */
-   @Override
+    @Override
     public void receiveCommand(
         @NonNull FrameLayout root,
         int commandId,
