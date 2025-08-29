@@ -39,9 +39,7 @@ const DirectPayManager: React.FC<customCheckoutViewProps> = (props) => {
   const createFragment = (viewId: any) =>
     UIManager.dispatchViewManagerCommand(
       viewId,
-      // we are calling the 'create' command
-      // @ts-ignore
-      UIManager.DirectPay.Commands.create.toString(),
+      UIManager.getViewManagerConfig('DirectPay').Commands.create,
       [viewId]
     );
 

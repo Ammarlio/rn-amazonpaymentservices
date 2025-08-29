@@ -56,21 +56,16 @@ public class DirectPayManager extends ViewGroupManager<FrameLayout> {
     /**
      * Handle "create" command (called from JS) and call createFragment method
      */
-    @Override
+   @Override
     public void receiveCommand(
-            @NonNull FrameLayout root,
-            String commandId,
-            @Nullable ReadableArray args
+        @NonNull FrameLayout root,
+        int commandId,
+        @Nullable ReadableArray args
     ) {
-        super.receiveCommand(root, commandId, args);
         int reactNativeViewId = args.getInt(0);
-        int commandIdInt = Integer.parseInt(commandId);
 
-        switch (commandIdInt) {
-            case COMMAND_CREATE:
-                createFragment(root, reactNativeViewId);
-                break;
-            default: {}
+        if (commandId == COMMAND_CREATE) {
+            createFragment(root, reactNativeViewId);
         }
     }
 
